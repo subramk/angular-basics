@@ -1,0 +1,32 @@
+
+-- Dominic recoomends this link to do ....
+https://github.com/gbosetti/todo-list-with-angular-6/tree/master/src
+
+
+-- kill angular running on port 4200 
+
+sudo lsof -t -i tcp:4200 | xargs kill -9
+
+
+-- deploy and run  the application 
+ng serve - angularCLI compiles TS to JS under the hood. 
+-- compile using tsc command 
+tsc myfile.ts 
+
+
+-- Modules  in TS  ( not as same as Angular Modules which are different concept altogether)
+ 
+ - in Typescript think of a module as a sort of equivalent of a class .
+ - when we use the export keyword on the class, the file becomes a module ( kind of )
+ 
+- define the class as export it so that it can be used in other classes (ex Point.js)
+- import the module ( ie the above class), and use it where it is required. 
+( ie - use the import statement  in main.ts to makeuse of the Point.ts )
+
+- Note , in TS  we can export NOT ONLY MODULES (IE classes ) ,  BUT ALSO functions, variables, objects 
+
+
+
+
+
+

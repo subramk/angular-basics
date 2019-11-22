@@ -1,0 +1,37 @@
+
+Modules 
+    - ui components are grouped together as modules in Angular 
+
+Components 
+    - Create a component , 
+        - Register it in a module 
+            - Add an element in html markup 
+
+
+Components in AJS expand the html markup vocabulary 
+    
+    using  CLI in Angular 
+
+-- creating components. 
+    ->  ng g c <<component name >>
+    
+-- creating services 
+    -> ng g s <<service name >></service>    
+
+when we use the leading asterking on a ng directive, then implicity we are 
+getting a ng-template to work for us in the backgroun 
+
+ex :
+
+
+We use DIRECTIVES to modify the underlying DOM Model 
+
+- Structural Directive - those that modify structure of the dom element : 
+        - these are  prefixed with a * sign  ... Ex *ngIf  , *ngFor 
+        <div *ngIf="courses.length > 0 ; else no Course
+
+
+- Attribute Directive 
+
+
+To Code : Chapters Reactive Forms and Consuming Http Services. 
