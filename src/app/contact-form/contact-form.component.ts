@@ -7,27 +7,17 @@ import { Component} from '@angular/core';
 })
 export class ContactFormComponent  {
 
-  constructor() { }
+  constructor() {
+  }
 
-  public courses = [1,2,3]; 
-
-  task = {
-      title: "Review Applications",
-      assignee : {
-        name: "John Doe",
-        age: '24'
-      }
+  person = {
+    firstName: '',
+    surname: '',
   };
 
+  onSubmit(){
+    console.log(this.person, '<---form');
 
-  public log(x){
-    console.log(x);
+    // Here you can make a call (POST etc)
   }
-
-  public submit(f){
-    console.log(f);
-  }
-
-  
-
 }

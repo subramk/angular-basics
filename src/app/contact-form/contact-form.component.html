@@ -1,52 +1,42 @@
-<div *ngIf="courses.length > 0;then coursesPresent else noCourses"></div> 
-<ng-template #coursesPresent>
-        List of Courses Found 
-</ng-template>
-<ng-template #noCourses>
-        No Courses Foundsss !! 
-</ng-template>
-<br/>
-Name of Assignee : 
-<span>{{task.assignee?.name}} </span> <!-- safe null check of assignee object -->
 
-<form> <!-- #f="ngForm" (ngSubmit)="submit(f)"-->
+Debug person object:
+<span>{{person | json}} </span> 
+<br />
+<br />
+
+<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
     <div class="form-group">
-            <label for="firstName">FirstName</label> 
-            <input ngModel name="firstName"
+            <label for="firstName">FirstName</label>
+            <input name="firstName"
+                   #firstName="ngModel"
+                   class="form-control"
+                   [(ngModel)]="person.firstName"
+                   [ngClass]="{ 'is-invalid': f.submitted && person.firstName.invalid }"
                    minlength="2"
-                   maxlength="25"
-                   required=true
-                   id="firstName" 
-                   type="text" 
-                   class="form-control"/>
-         
-                   <div class = "alert alert-danger" *ngIf="firstName.touched && !firstName.valid">FirstName is Required!!</div>
-                   <div *ngIf="firstName.errors.required">FirstName is Required !!</div>
-                   <div *ngIf="firstName.errors.minlength">Min  length !!</div>
-                   <div *ngIf="firstName.errors.maxlength"> Max length !!</div>
-                    
+                   maxlength="5"
+                   required
+                   type="text" />
+
+        <div class = "alert alert-danger" *ngIf="person.firstName">
+                <div *ngIf="firstName.errors?.required">person.firstName is Required !!</div>
+                <div *ngIf="firstName.errors?.minlength">Min length !!</div>
+                <div *ngIf="firstName.errors?.maxlength">Max length !!</div>
+        </div>
     </div>
 
     <div class="form-group">
-            <label for="address">Address</label> 
-            <input ngModel name="address"
-                   id="address" 
-                   type="text" 
-                   class="form-control"/>
+            <label for="address">Surname</label> 
+            <input name="surname"
+                #surname="ngModel"
+                class="form-control"
+                [(ngModel)]="person.surname"
+                [ngClass]="{ 'is-invalid': f.submitted && person.surname.invalid }"
+                minlength="2"
+                maxlength="5"
+                required
+                type="text"
+                class="form-control"/>
     </div>
-    <!-- <div class="form-group">
-        <label for="comments">Comments</label>    
-        <input    
-                    id="comments" 
-                    type="textarea"
-                
-                    cols="300", 
-                    rows="100" 
-                    class="form-control"/>
-    </div> -->
-    
     <button class="btn btn-primary">Submit</button>
-   
-       
 
 </form>
